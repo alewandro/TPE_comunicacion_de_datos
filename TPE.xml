@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scenario>
+  <NetworkPlan>
+    <NetworkDefinition id="2" name="Hub-Oficinas" type="HubNode"/>
+    <NetworkDefinition id="28308" name="28308" type="PtpNet"/>
+    <NetworkDefinition id="40729" name="40729" type="PtpNet"/>
+    <NetworkDefinition id="57631" name="57631" type="PtpNet"/>
+    <NetworkDefinition id="48800" name="48800" type="PtpNet"/>
+    <NetworkDefinition id="32164" name="32164" type="PtpNet"/>
+    <NetworkDefinition id="8236" name="8236" type="PtpNet"/>
+    <NetworkDefinition id="63160" name="63160" type="PtpNet"/>
+    <NetworkDefinition id="41474" name="41474" type="PtpNet"/>
+    <NetworkDefinition id="63571" name="63571" type="PtpNet"/>
+    <NetworkDefinition id="58000" name="58000" type="PtpNet"/>
+    <NetworkDefinition id="9831" name="9831" type="PtpNet"/>
+    <NetworkDefinition id="58862" name="58862" type="PtpNet"/>
+    <NetworkDefinition id="40824" name="40824" type="PtpNet"/>
+    <NetworkDefinition id="63998" name="63998" type="PtpNet"/>
+    <Node id="1" name="PC-Casa" type="PC">
+      <interface name="eth0" net="57631">
+        <address type="mac">00:00:00:aa:00:1e</address>
+        <address>10.0.0.20/24</address>
+        <address>2001::20/64</address>
+      </interface>
+    </Node>
+    <Node id="3" name="Router-Casa" type="router">
+      <interface name="eth0" net="57631">
+        <address type="mac">00:00:00:aa:00:1d</address>
+        <address>10.0.0.1/24</address>
+        <address>2001::1/64</address>
+      </interface>
+      <interface name="eth1" net="58000">
+        <address type="mac">00:00:00:aa:00:22</address>
+        <address>10.0.2.2/24</address>
+        <address>2001:2::2/64</address>
+      </interface>
+    </Node>
+    <Node id="4" name="Router-1" type="router">
+      <interface name="eth0" net="63998">
+        <address type="mac">00:00:00:aa:00:24</address>
+        <address>10.0.3.2/24</address>
+        <address>2001:3::2/64</address>
+      </interface>
+      <interface name="eth1" net="Hub-Oficinas">
+        <address type="mac">00:00:00:aa:00:25</address>
+        <address>10.0.4.1/24</address>
+        <address>2001:4::1/64</address>
+      </interface>
+      <interface name="eth2" net="58862">
+        <address type="mac">00:00:00:aa:00:26</address>
+        <address>10.0.5.1/24</address>
+        <address>2001:5::1/64</address>
+      </interface>
+      <interface name="eth3" net="48800">
+        <address type="mac">00:00:00:aa:00:2c</address>
+        <address>10.0.8.1/24</address>
+        <address>2001:8::1/64</address>
+      </interface>
+    </Node>
+    <Node id="5" name="Router-2" type="router">
+      <interface name="eth0" net="48800">
+        <address type="mac">00:00:00:aa:00:2d</address>
+        <address>10.0.8.2/24</address>
+        <address>2001:8::2/64</address>
+      </interface>
+      <interface name="eth1" net="32164">
+        <address type="mac">00:00:00:aa:00:2f</address>
+        <address>10.0.9.2/24</address>
+        <address>2001:9::2/64</address>
+      </interface>
+      <interface name="eth2" net="40729">
+        <address type="mac">00:00:00:aa:00:36</address>
+        <address>10.0.13.1/24</address>
+        <address>2001:13::1/64</address>
+      </interface>
+    </Node>
+    <Node id="6" name="Router-3" type="router">
+      <interface name="eth0" net="8236">
+        <address type="mac">00:00:00:aa:00:2b</address>
+        <address>10.0.7.2/24</address>
+        <address>2001:7::2/64</address>
+      </interface>
+      <interface name="eth1" net="32164">
+        <address type="mac">00:00:00:aa:00:2e</address>
+        <address>10.0.9.1/24</address>
+        <address>2001:9::1/64</address>
+      </interface>
+      <interface name="eth2" net="63160">
+        <address type="mac">00:00:00:aa:00:31</address>
+        <address>10.0.10.2/24</address>
+        <address>2001:10::2/64</address>
+      </interface>
+      <interface name="eth3" net="41474">
+        <address type="mac">00:00:00:aa:00:38</address>
+        <address>10.0.14.1/24</address>
+        <address>2001:14::1/64</address>
+      </interface>
+    </Node>
+    <Node id="7" name="Servidor-1" type="host">
+      <interface name="eth0" net="28308">
+        <address type="mac">00:00:00:aa:00:32</address>
+        <address>10.0.11.10/24</address>
+        <address>2001:11::10/64</address>
+      </interface>
+    </Node>
+    <Node id="8" name="Servidor-2" type="host">
+      <interface name="eth0" net="9831">
+        <address type="mac">00:00:00:aa:00:34</address>
+        <address>10.0.12.10/24</address>
+        <address>2001:12::10/64</address>
+      </interface>
+    </Node>
+    <Node id="9" name="Router-Nat" type="router">
+      <interface name="eth0" net="63571">
+        <address type="mac">00:00:00:aa:00:1f</address>
+        <address>10.0.1.1/24</address>
+        <address>2001:1::1/64</address>
+      </interface>
+      <interface name="eth1" net="40824">
+        <address type="mac">00:00:00:aa:00:29</address>
+        <address>10.0.6.2/24</address>
+        <address>2001:6::2/64</address>
+      </interface>
+    </Node>
+    <Node id="10" name="BR-Ventas" type="router">
+      <interface name="eth0" net="63998">
+        <address type="mac">00:00:00:aa:00:23</address>
+        <address>10.0.3.1/24</address>
+        <address>2001:3::1/64</address>
+      </interface>
+    </Node>
+    <Node id="11" name="ISP-1" type="router">
+      <interface name="eth0" net="58000">
+        <address type="mac">00:00:00:aa:00:21</address>
+        <address>10.0.2.1/24</address>
+        <address>2001:2::1/64</address>
+      </interface>
+    </Node>
+    <Node id="12" name="ISP-2" type="router">
+      <interface name="eth0" net="63571">
+        <address type="mac">00:00:00:aa:00:20</address>
+        <address>10.0.1.2/24</address>
+        <address>2001:1::2/64</address>
+      </interface>
+    </Node>
+    <Node id="13" name="BR" type="router">
+      <interface name="eth0" net="58862">
+        <address type="mac">00:00:00:aa:00:27</address>
+        <address>10.0.5.2/24</address>
+        <address>2001:5::2/64</address>
+      </interface>
+      <interface name="eth1" net="40824">
+        <address type="mac">00:00:00:aa:00:28</address>
+        <address>10.0.6.1/24</address>
+        <address>2001:6::1/64</address>
+      </interface>
+      <interface name="eth2" net="8236">
+        <address type="mac">00:00:00:aa:00:2a</address>
+        <address>10.0.7.1/24</address>
+        <address>2001:7::1/64</address>
+      </interface>
+    </Node>
+    <Node id="14" name="BR-Data-Center" type="router">
+      <interface name="eth0" net="63160">
+        <address type="mac">00:00:00:aa:00:30</address>
+        <address>10.0.10.1/24</address>
+        <address>2001:10::1/64</address>
+      </interface>
+      <interface name="eth1" net="28308">
+        <address type="mac">00:00:00:aa:00:33</address>
+        <address>10.0.11.1/24</address>
+        <address>2001:11::1/64</address>
+      </interface>
+      <interface name="eth2" net="9831">
+        <address type="mac">00:00:00:aa:00:35</address>
+        <address>10.0.12.1/24</address>
+        <address>2001:12::1/64</address>
+      </interface>
+    </Node>
+    <Node id="15" name="WiFi-AP" type="router">
+      <interface name="eth0" net="40729">
+        <address type="mac">00:00:00:aa:00:37</address>
+        <address>10.0.13.2/24</address>
+        <address>2001:13::2/64</address>
+      </interface>
+    </Node>
+    <Node id="16" name="BR-Admin" type="router">
+      <interface name="eth0" net="41474">
+        <address type="mac">00:00:00:aa:00:39</address>
+        <address>10.0.14.2/24</address>
+        <address>2001:14::2/64</address>
+      </interface>
+    </Node>
+  </NetworkPlan>
+  <MotionPlan>
+    <Node name="Hub-Oficinas">
+      <motion type="stationary">
+        <point>402,145</point>
+      </motion>
+    </Node>
+    <Node name="PC-Casa">
+      <motion type="stationary">
+        <point>889,73</point>
+      </motion>
+    </Node>
+    <Node name="Router-Casa">
+      <motion type="stationary">
+        <point>890,256</point>
+      </motion>
+    </Node>
+    <Node name="Router-1">
+      <motion type="stationary">
+        <point>356,306</point>
+      </motion>
+    </Node>
+    <Node name="Router-2">
+      <motion type="stationary">
+        <point>116,369</point>
+      </motion>
+    </Node>
+    <Node name="Router-3">
+      <motion type="stationary">
+        <point>360,582</point>
+      </motion>
+    </Node>
+    <Node name="Servidor-1">
+      <motion type="stationary">
+        <point>75,619</point>
+      </motion>
+    </Node>
+    <Node name="Servidor-2">
+      <motion type="stationary">
+        <point>71,692</point>
+      </motion>
+    </Node>
+    <Node name="Router-Nat">
+      <motion type="stationary">
+        <point>474,491</point>
+      </motion>
+    </Node>
+    <Node name="BR-Ventas">
+      <motion type="stationary">
+        <point>248,144</point>
+      </motion>
+    </Node>
+    <Node name="ISP-1">
+      <motion type="stationary">
+        <point>889,452</point>
+      </motion>
+    </Node>
+    <Node name="ISP-2">
+      <motion type="stationary">
+        <point>735,490</point>
+      </motion>
+    </Node>
+    <Node name="BR">
+      <motion type="stationary">
+        <point>355,433</point>
+      </motion>
+    </Node>
+    <Node name="BR-Data-Center">
+      <motion type="stationary">
+        <point>233,660</point>
+      </motion>
+    </Node>
+    <Node name="WiFi-AP">
+      <motion type="stationary">
+        <point>40,452</point>
+      </motion>
+    </Node>
+    <Node name="BR-Admin">
+      <motion type="stationary">
+        <point>531,660</point>
+      </motion>
+    </Node>
+  </MotionPlan>
+  <ServicePlan/>
+  <CoreMetaData>
+    <SessionOptions>
+      <param name="enablesdt">1</param>
+    </SessionOptions>
+    <MetaData>
+      <param name="global_options">interface_names=no ip_addresses=yes ipv6_addresses=no node_labels=yes link_labels=yes show_api=no background_images=no annotations=yes grid=yes traffic_start=0</param>
+      <param name="canvas c1">{name {Canvas1}}</param>
+      <param name="annotation a1">{iconcoords {648.0 401.0 958.0 568.0}} {type oval} {label {Internet}} {labelcolor black} {fontfamily {Arial}} {fontsize {12}} {color #CFCFFF} {width 0} {border black} {canvas c1}</param>
+    </MetaData>
+  </CoreMetaData>
+</Scenario>
